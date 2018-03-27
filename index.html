@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hangman</title>
+  <link href='./style.css' rel='stylesheet'>
+</head>
+<body>
+  <header>
+    <h1 class="java">Javascript</h1><br>
+    <h1 class="hang">Hangman</h1>
+  </header>
+  
+  <aside class='man'>
+      <div class='noose'></div>
+      <div class='head'></div>
+      <div class='torso'></div>
+      <div class='leftArm'></div>
+      <div class='rightArm'></div>
+      <div class='leftLeg'></div>
+      <div class='rightLeg'></div>      
+  </aside>
+
+  <main class='center'>
+      <input class='letter' type='text' placeholder='Enter a letter'>
+      <input class='button1' type='submit' value='submit'>     
+      <h2 class='guesses'>You have <span class='countdown'>8</span> guesses remaining</h2> 
+  </main>
+
+  <aside class='pole'>
+    <div class='base'></div>
+  </aside>
+
+  
+  <script src='./script.js'></script>
+</body>
+</html>

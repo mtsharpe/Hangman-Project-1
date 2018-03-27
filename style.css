@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Bahiana');
+
+body {
+  margin: 0 auto;
+  text-align: center;
+  background-color: #DEB887
+}
+
+.java {
+  font-size: 70px;
+  font-family: Bahiana, cursive;
+  border-bottom: 3px solid black;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.hang {
+  font-size: 120px;
+  font-family: Bahiana, cursive;
+  color: #8A0707;
+  margin-top: -42px;
+  z-index: 1;
+}
+
+.center .letter {
+  padding: 8px;
+  width: 70px;
+  border-radius: 6px;
+  border: none;
+  position: relative;
+}
+
+.center .button1 {
+  background-color: #8A0707;
+  color: white;
+  padding: 8px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  border: none;
+  position: relative;
+}
+
+.center .guesses {
+  font-family: Helvetica;
+  font-size: 16px;
+  color: black;
+  position: relative;
+}
+
+.center .countdown {
+  font-family: Bahiana, cursive;
+  color: #8A0707;
+  font-size: 30px;
+  position: relative;
+}
+
+.man .noose {
+  width: 2px;
+  border-left: 4px solid black;
+  height: 100px;
+  position: relative;
+  margin-left: 135px;
+  margin-top: -198px;
+}
+
+.man .head {
+  width: 40px;
+  height: 40px;
+  border: 2.3px solid black;
+  border-radius: 100%;
+  position: relative;
+  margin-left: 115px;
+}
+
+.man .torso {
+  width: 1px;
+  border-left: 3px solid black;
+  height: 100px;
+  margin-left: 135px;
+  position: relative;
+}
+
+.man .leftArm {
+  width: 1px;
+  border-left: 2.5px solid black;
+  height: 50px;
+  margin-left: 115px;
+  margin-top: -80px;
+  color: black;
+  position: relative;
+  transform: rotate(130deg);
+}
+
+.man .rightArm {
+  width: 1px;
+  border-left: 2.5px solid black;
+  height: 50px;
+  margin-left: 155px;
+  margin-top: -50px;
+  color: black;
+  position: relative;
+  transform: rotate(50deg); 
+}
+
+.man .leftLeg {
+  width: 1px;
+  border-left: 2.5px solid black;
+  height: 60px;
+  margin-left: 120px;
+  margin-top: 25px;
+  color: black;
+  position: relative;
+  transform: rotate(-150deg); 
+}
+
+.man .rightLeg {
+  width: 1px;
+  border-left: 2.5px solid black;
+  height: 60px;
+  margin-left: 147px;
+  margin-top: -58px;
+  color: black;
+  position: relative;
+  transform: rotate(-23deg); 
+}
+
+.pole {
+  width: 2px;
+  height: 500px;
+  border-right: 8px solid black;
+  float: right;
+  margin-right: 139px;
+  margin-top: -390px;
+  position: relative;
+} 
+
+.base {
+  width: 0; 
+  height: 0; 
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-bottom: 70px solid black;
+  float: right;
+  margin-right: -75px;
+  margin-top: 450px;
+} 
