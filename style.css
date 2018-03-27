@@ -3,15 +3,22 @@
 body {
   margin: 0 auto;
   text-align: center;
-  background-color: #DEB887
+  background-color: #DEB887;
+  height: 100vh;
+  width: 800px;
+}
+
+header {
+  width: 100%;
 }
 
 .java {
   font-size: 70px;
   font-family: Bahiana, cursive;
-  border-bottom: 3px solid black;
+  border-bottom: 10px solid black;
   width: 70%;
   margin: 0 auto;
+  padding: 20px 0 -20px 0;
 }
 
 .hang {
@@ -22,12 +29,11 @@ body {
   z-index: 1;
 }
 
-.center .letter {
+.center .letterInput {
   padding: 8px;
-  width: 70px;
+  width: 20px;
   border-radius: 6px;
   border: none;
-  position: relative;
 }
 
 .center .button1 {
@@ -37,110 +43,186 @@ body {
   text-transform: uppercase;
   border-radius: 6px;
   border: none;
-  position: relative;
-}
+  margin-top: 20px;
+  width: 80px;
+} 
 
 .center .guesses {
   font-family: Helvetica;
   font-size: 16px;
   color: black;
-  position: relative;
+  margin-top: 40px;
 }
 
 .center .countdown {
   font-family: Bahiana, cursive;
   color: #8A0707;
   font-size: 30px;
+}
+
+p {
+  font-family: Helvetica;
+  font-size: 16px;
+  color: black;
   position: relative;
+  margin-top: -170px;
+
 }
 
 .man .noose {
   width: 2px;
-  border-left: 4px solid black;
+  border-left: 4px solid  #c88937;
   height: 100px;
   position: relative;
-  margin-left: 135px;
+  margin-left: 120px;
   margin-top: -198px;
+  z-index: -1;
 }
 
 .man .head {
   width: 40px;
   height: 40px;
-  border: 2.3px solid black;
+  border: 2.3px solid #c88937;
   border-radius: 100%;
   position: relative;
-  margin-left: 115px;
+  margin-left: 100px;
 }
 
 .man .torso {
   width: 1px;
-  border-left: 3px solid black;
+  border-left: 3px solid  #c88937
+  ;
   height: 100px;
-  margin-left: 135px;
+  margin-left: 120px;
   position: relative;
 }
 
 .man .leftArm {
   width: 1px;
-  border-left: 2.5px solid black;
+  border-left: 2.5px solid  #c88937;
   height: 50px;
-  margin-left: 115px;
+  margin-left: 99px;
   margin-top: -80px;
-  color: black;
   position: relative;
   transform: rotate(130deg);
 }
 
 .man .rightArm {
   width: 1px;
-  border-left: 2.5px solid black;
+  border-left: 2.5px solid  #c88937;
   height: 50px;
-  margin-left: 155px;
+  margin-left: 140px;
   margin-top: -50px;
-  color: black;
   position: relative;
   transform: rotate(50deg); 
 }
 
 .man .leftLeg {
-  width: 1px;
-  border-left: 2.5px solid black;
+  width: 2.5px;
+  border-left: 2.5px solid #c88937;
   height: 60px;
-  margin-left: 120px;
+  margin-left: 105px;
   margin-top: 25px;
-  color: black;
   position: relative;
   transform: rotate(-150deg); 
 }
 
 .man .rightLeg {
   width: 1px;
-  border-left: 2.5px solid black;
+  border-left: 2.5px solid #c88937;
   height: 60px;
-  margin-left: 147px;
+  margin-left: 132px;
   margin-top: -58px;
-  color: black;
   position: relative;
   transform: rotate(-23deg); 
 }
 
-.pole {
-  width: 2px;
-  height: 500px;
+.none {
+  border-left: 2.5px solid black
+}
+
+/* .pole {
+  width: 150px;
+  height: 600px;
+  background-color: black;
   border-right: 8px solid black;
   float: right;
-  margin-right: 139px;
-  margin-top: -390px;
+  margin-top: -500px;
+  margin-right: 20px;
+  display: grid;
+}  */
+
+.pole {
+  width: 150px;
+  height: 600px;
+  background-color: black;
+  border-right: 8px solid black;
+  float: right;
+  margin-top: -500px;
+  margin-right: 20px;
+} 
+
+h3 {
+  font-family: Bahiana, cursive;
+  color: #8A0707;
+  font-size: 20px;
+  margin-top: 130px;
+  font-size: 30px;
+  position: relative;
+}
+
+.word {
+  margin: auto;
+}
+
+.letters {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  padding: 2px 2px 8px 2px;
+  border-bottom: 1px solid black;
+  font-family: Bahiana, cursive;
+  font-size: 35px;
+  color: #8A0707;
+  display: inline-block;
+  margin-top: 30px;
+  margin-right: 4px;
   position: relative;
 } 
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 40px);
+  grid-gap: 10px;  
+}
+ 
+.first  {
+  margin-top: -20px;
+} 
+
+.buttons {
+  width: 20px;
+  height: 20px;
+  color: #8A0707;
+  background-color: #c88937;
+  border: none;
+  border-radius: 100%;
+  margin-left: 20px;
+  font-family: Helvetica;
+  font-weight: 600;
+  text-align: center;
+  z-index: 1
+}
+
 
 .base {
   width: 0; 
   height: 0; 
-  border-left: 70px solid transparent;
-  border-right: 70px solid transparent;
-  border-bottom: 70px solid black;
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  border-bottom: 90px solid black;
   float: right;
-  margin-right: -75px;
-  margin-top: 450px;
+  margin-right: -70px;
+  margin-top: 80px; 
+  position: relative;
 } 
