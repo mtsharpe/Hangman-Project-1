@@ -69,7 +69,7 @@ p {
 
 }
 
-.man .noose {
+.noose {
   width: 2px;
   border-left: 4px solid  #c88937;
   height: 100px;
@@ -79,7 +79,7 @@ p {
   z-index: -1;
 }
 
-.man .head {
+.head {
   width: 40px;
   height: 40px;
   border: 2.3px solid #c88937;
@@ -88,26 +88,25 @@ p {
   margin-left: 100px;
 }
 
-.man .torso {
+.torso {
   width: 1px;
-  border-left: 3px solid  #c88937
-  ;
+  border-left: 3px solid  #c88937;
   height: 100px;
   margin-left: 120px;
   position: relative;
 }
 
-.man .leftArm {
+.leftArm {
   width: 1px;
   border-left: 2.5px solid  #c88937;
   height: 50px;
-  margin-left: 99px;
+  margin-left: 100px;
   margin-top: -80px;
   position: relative;
   transform: rotate(130deg);
 }
 
-.man .rightArm {
+.rightArm {
   width: 1px;
   border-left: 2.5px solid  #c88937;
   height: 50px;
@@ -117,17 +116,17 @@ p {
   transform: rotate(50deg); 
 }
 
-.man .leftLeg {
+.leftLeg {
   width: 2.5px;
   border-left: 2.5px solid #c88937;
   height: 60px;
-  margin-left: 105px;
+  margin-left: 103px;
   margin-top: 25px;
   position: relative;
   transform: rotate(-150deg); 
 }
 
-.man .rightLeg {
+.rightLeg {
   width: 1px;
   border-left: 2.5px solid #c88937;
   height: 60px;
@@ -137,8 +136,12 @@ p {
   transform: rotate(-23deg); 
 }
 
-.none {
-  border-left: 2.5px solid black
+.hung {
+  border-left: 2.5px solid black;
+}
+
+.headhung {
+  border: 2.3px solid black;
 }
 
 /* .pole {
@@ -188,7 +191,12 @@ h3 {
   margin-top: 30px;
   margin-right: 4px;
   position: relative;
-} 
+}
+
+.blank {
+  color: white;
+  user-select: none;
+}
 
 .grid-container {
   display: grid;
@@ -213,7 +221,9 @@ h3 {
   text-align: center;
   z-index: 1
 }
-
+.clicked {
+  z-index: -1;
+}
 
 .base {
   width: 0; 
