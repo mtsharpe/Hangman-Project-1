@@ -133,7 +133,7 @@ p {
   margin-left: 134px;
   margin-top: -58px;
   position: relative;
-  transform: rotate(-25deg); 
+  transform: rotate(-27deg); 
 }
 
 .hung {
@@ -143,17 +143,6 @@ p {
 .headhung {
   border: 2.3px solid black;
 }
-
-/* .pole {
-  width: 150px;
-  height: 600px;
-  background-color: black;
-  border-right: 8px solid black;
-  float: right;
-  margin-top: -500px;
-  margin-right: 20px;
-  display: grid;
-}  */
 
 .pole {
   width: 150px;
@@ -172,6 +161,25 @@ h3 {
   margin-bottom: 5px;
   font-size: 33px;
   position: relative;
+}
+
+h4 {
+  font-family: Bahiana, cursive;
+  color: #8A0707;
+  font-size: 70px;
+  position: relative;
+  margin-top: -10px;
+}
+
+.reset {
+  border: none;
+  color: #c88937;
+  background-color: black;
+  padding: 6px;
+  position: relative;
+  border-radius: 4px;
+  margin-top: -150px;
+  display: none;
 }
 
 .word {
