@@ -130,10 +130,10 @@ p {
   width: 1px;
   border-left: 2.5px solid #c88937;
   height: 60px;
-  margin-left: 132px;
+  margin-left: 134px;
   margin-top: -58px;
   position: relative;
-  transform: rotate(-23deg); 
+  transform: rotate(-25deg); 
 }
 
 .hung {
@@ -168,9 +168,9 @@ p {
 h3 {
   font-family: Bahiana, cursive;
   color: #8A0707;
-  font-size: 20px;
-  margin-top: 130px;
-  font-size: 30px;
+  margin-top: 140px;
+  margin-bottom: 5px;
+  font-size: 33px;
   position: relative;
 }
 
@@ -203,10 +203,6 @@ h3 {
   grid-template-columns: repeat(3, 40px);
   grid-gap: 10px;  
 }
- 
-.first  {
-  margin-top: -20px;
-} 
 
 .buttons {
   width: 20px;
@@ -222,17 +218,22 @@ h3 {
   z-index: 1
 }
 .clicked {
+  outline: none;
+  border: none;
+  color: black;
+  background-color: black;
+  user-select: none;
   z-index: -1;
 }
 
 .base {
   width: 0; 
   height: 0; 
-  border-left: 140px solid transparent;
-  border-right: 140px solid transparent;
-  border-bottom: 90px solid black;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 70px solid black;
   float: right;
-  margin-right: -70px;
-  margin-top: 80px; 
+  margin-right: -79px;
+  margin-top: 90px; 
   position: relative;
 } 
