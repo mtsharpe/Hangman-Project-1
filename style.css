@@ -179,6 +179,9 @@ h4 {
   position: relative;
   border-radius: 4px;
   margin-top: -150px;
+}
+
+.hidden {
   display: none;
 }
 

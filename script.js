@@ -5,7 +5,6 @@ let wordLetters = secretWord.split('')
 
 let inputs = document.querySelectorAll('.buttons')
 let guessNumber = document.querySelector('.countdown')
-let resetButton = document.querySelector('.reset')
 
 let matches = 0
 let misses = 0
@@ -22,17 +21,14 @@ function createWord () {
 }
 createWord()
 
-// document.querySelectorAll('.letters').forEach(function (letter) {
-//   letter.classList.add('blank')
-// })
-
 function checkLetters () {
   inputs.forEach(function (input) {
     input.addEventListener('click', function () {
       let inputGuess = input.value
       input.setAttribute('class', 'clicked')
-      if (wordLetters.indexOf(inputGuess) >= 0) {
-        document.innerHTML.remove('.blank')
+      if (wordLetters.includes(inputGuess) === true) {
+        document.getElementsByClassName()
+        wordLetters.slice(inputGuess)  
         matches++
         checkWin()
       } else {
@@ -42,6 +38,7 @@ function checkLetters () {
     })
   })
 }
+
 
 checkLetters()
 
@@ -72,15 +69,24 @@ function hangman () {
     guessNumber.innerHTML--
   } else if (misses === 7) {
     document.querySelector('.rightLeg').classList.add('hung')
-    document.querySelector('.word').innerHTML = '<h4>YOU LOSE!!!<h4>' 
+    document.querySelector('.guesses').innerHTML = ''
+    document.querySelector('.reset').classList.remove('hidden') 
   }
 }
 
 function reset () {
-  document.querySelectorAll('.man').classList.remove('hung')
+  document.querySelector('.noose').classList.remove('hung')
   document.querySelector('.head').classList.remove('headhung')
-  document.querySeletor('.guesses').innerHMTL = 'You have <span class="".countdown">7</span> guesses remaining</h2>'
+  document.querySelector('.torso').classList.remove('hung')
+  document.querySelector('.leftArm').classList.remove('hung')
+  document.querySelector('.rightArm').classList.remove('hung')
+  document.querySelector('.leftLeg').classList.remove('hung')
+  document.querySelector('.rightLeg').classList.remove('hung')
+  document.querySelector('.guesses').innerHMTL = '<h2>You have <span class=".countdown">7</span> guesses remaining</h2>'
+  inputs.forEach(function (input) {
+    input.removeAttribute('clicked')
+  })
   createWord()
 }
 
-document.querySelector('.reset').addEventListener('click', resetButton)
+document.querySelector('.reset').addEventListener('click', reset)
