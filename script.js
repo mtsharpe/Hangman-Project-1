@@ -1,14 +1,22 @@
+// Chooses random word from array of choices and splits word into indiviudal letters
 let words = ['ARRAY', 'EVENT', 'VARIABLE', 'OBJECT', 'METHOD', 'FUNCTION', 'VALUE', 'STRING', 'BOOLEAN', 'TRUTHY', 'CONSOLE',
 'HOISTING', 'LOOPS', 'MODULUS', 'CLASSES', 'PROMPT', 'CONDITION', 'CONCATENATE', 'SYNTAX', 'GITHUB', 'NULL', 'UNDEFINED']
-let secretWord = words[Math.floor(Math.random() * words.length)]
-let wordLetters = secretWord.split('')
 
+let secretWord, wordLetters
+
+let makeSecretWord = () => {
+  secretWord = words[Math.floor(Math.random() * words.length)]
+  wordLetters = secretWord.split('')
+}
+makeSecretWord()
+// Variables for creating letter input buttons, keeping track of number of guesses left and the number of matched and missed guesses
 let inputs = document.querySelectorAll('.buttons')
 let guessNumber = document.querySelector('.countdown')
 
 let matches = 0
 let misses = 0
 
+// Creates letters as children of parent element word
 function createWord () {
   for (i = 0; i < wordLetters.length; i++) {
     let letters = document.createElement('div')
@@ -21,6 +29,7 @@ function createWord () {
 }
 createWord()
 
+// Gets value of user input and compares value to letters contained in random word
 function checkLetters () {
   inputs.forEach(function (input) {
     input.addEventListener('click', function () {
@@ -31,7 +40,7 @@ function checkLetters () {
         Array.from(guessedLetter).forEach(letter => {
           letter.classList.remove('blank')
           matches++
-        })  
+        })
         checkWin()
       } else {
         misses++
@@ -43,12 +52,16 @@ function checkLetters () {
 
 checkLetters()
 
+// Checks condition for win
 function checkWin () {
   if (matches === wordLetters.length) {
-    document.querySelector('.word').innerHTML = '<h4>WINNER!!!<h4>'
+    document.querySelector('.win').classList.remove('hidden')
+    document.querySelector('.reset').classList.remove('hidden')
+    document.querySelector('.hint').classList.add('hidden')
+    document.querySelector('.guesses').classList.add('hidden')
   }
 }
-
+// Adds to hangman on each missed guess and decrements number of guesses left
 function hangman () {
   if (misses === 1) {
     document.querySelector('.noose').classList.add('hung')
@@ -70,23 +83,30 @@ function hangman () {
     guessNumber.innerHTML--
   } else if (misses === 7) {
     document.querySelector('.rightLeg').classList.add('hung')
-    document.querySelector('.letters').innerHTML = '<h4>YOU LOSE!!!</h4>'
+    document.querySelector('.lose').classList.remove('hidden')
     document.querySelector('.reset').classList.remove('hidden')
+    document.querySelector('.guesses').classList.add('hidden')
+    document.querySelector('.hint').classList.add('hidden')
   }
 }
 
 function reset () {
-  document.querySelector('.noose').classList.remove('hung')
+  Array.from(document.querySelectorAll('.man div')).forEach(limb => limb.classList.remove('hung'))
   document.querySelector('.head').classList.remove('headhung')
-  document.querySelector('.torso').classList.remove('hung')
-  document.querySelector('.leftArm').classList.remove('hung')
-  document.querySelector('.rightArm').classList.remove('hung')
-  document.querySelector('.leftLeg').classList.remove('hung')
-  document.querySelector('.rightLeg').classList.remove('hung')
-  document.querySelector('.guesses').innerHMTL = '<h2>You have <span class=".countdown">7</span> guesses remaining</h2>'
+  document.querySelector('.guesses').classList.remove('hidden')
+  document.querySelector('.hint').classList.remove('hidden')
+  document.querySelector('.lose').classList.add('hidden')
+  document.querySelector('.reset').classList.add('hidden')
+  document.querySelector('.win').classList.add('hidden')
   Array.from(inputs).forEach(input => {
     input.classList.remove('clicked')
   })
+  document.querySelector('.word').innerHTML = ''
+  makeSecretWord()
+  createWord()
+  matches = 0
+  misses = 0
+  guessNumber.innerHTML = 7
 }
 
 document.querySelector('.reset').addEventListener('click', reset)
