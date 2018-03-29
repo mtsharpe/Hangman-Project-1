@@ -3,7 +3,7 @@
 body {
   margin: 0 auto;
   text-align: center;
-  background-color: #DEB887;
+  background-color: #DEB887; 
   height: 100vh;
   width: 800px;
 }
@@ -16,7 +16,7 @@ header {
   font-size: 70px;
   font-family: Bahiana, cursive;
   border-bottom: 10px solid black;
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   padding: 20px 0 -20px 0;
 }
@@ -60,13 +60,22 @@ header {
   font-size: 30px;
 }
 
-p {
+.hint {
   font-family: Helvetica;
   font-size: 16px;
   color: black;
   position: relative;
   margin-top: -170px;
 
+}
+
+.answer {
+  font-family: Helvetica;
+  font-size: 16px;
+  color: black;
+  position: relative;
+  margin-top: 60px;
+  margin-bottom: -20px;
 }
 
 .noose {
@@ -94,6 +103,7 @@ p {
   height: 100px;
   margin-left: 120px;
   position: relative;
+  z-index: 1;
 }
 
 .leftArm {
@@ -101,7 +111,7 @@ p {
   border-left: 2.5px solid  #c88937;
   height: 50px;
   margin-left: 100px;
-  margin-top: -80px;
+  margin-top: -100px;
   position: relative;
   transform: rotate(130deg);
 }
@@ -119,9 +129,9 @@ p {
 .leftLeg {
   width: 2.5px;
   border-left: 2.5px solid #c88937;
-  height: 60px;
-  margin-left: 103px;
-  margin-top: 25px;
+  height: 68px;
+  margin-left: 101.5px;
+  margin-top: 43px;
   position: relative;
   transform: rotate(-150deg); 
 }
@@ -129,11 +139,11 @@ p {
 .rightLeg {
   width: 1px;
   border-left: 2.5px solid #c88937;
-  height: 60px;
-  margin-left: 134px;
-  margin-top: -58px;
+  height: 68px;
+  margin-left: 136px;
+  margin-top: -67px;
   position: relative;
-  transform: rotate(-27deg); 
+  transform: rotate(-28deg); 
 }
 
 .hung {
@@ -169,7 +179,12 @@ h4 {
   font-size: 70px;
   position: relative;
   margin-top: -160px;
-  margin-bottom: -40px
+  margin-bottom: 0px
+}
+
+.lose {
+  margin-top: -170px;
+  margin-bottom: -20px;
 }
 
 .reset {
@@ -179,7 +194,7 @@ h4 {
   padding: 6px;
   position: relative;
   border-radius: 4px;
-  margin-top: -150px;
+  margin-top: 20px;
 }
 
 .hidden {
@@ -193,7 +208,7 @@ h4 {
 .letters {
   width: 30px;
   height: 30px;
-  background-color: white;
+  background-color: #c88937;
   padding: 2px 2px 8px 2px;
   border-bottom: 1px solid black;
   font-family: Bahiana, cursive;
@@ -206,7 +221,7 @@ h4 {
 }
 
 .blank {
-  color: white;
+  color: #c88937;
   user-select: none;
 }
 
@@ -249,3 +264,17 @@ h4 {
   margin-top: 90px; 
   position: relative;
 } 
+
+/* followed a tutorial I found to create swing effect */
+
+@keyframes swinging{
+	0%{transform: rotate(10deg);}
+	50%{transform: rotate(-5deg)}
+	100%{transform: rotate(10deg);}
+}
+
+.swing{
+	position: relative;
+	transform-origin: 50% 0;
+	animation: swinging 8.5s ease-in-out forwards infinite;
+}

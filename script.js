@@ -87,6 +87,8 @@ function hangman () {
     document.querySelector('.reset').classList.remove('hidden')
     document.querySelector('.guesses').classList.add('hidden')
     document.querySelector('.hint').classList.add('hidden')
+    document.querySelector('.answer').classList.remove('hidden')
+    Array.from(document.querySelectorAll('.word div')).forEach(letter => letter.classList.remove('blank'))
   }
 }
 
@@ -98,6 +100,7 @@ function reset () {
   document.querySelector('.lose').classList.add('hidden')
   document.querySelector('.reset').classList.add('hidden')
   document.querySelector('.win').classList.add('hidden')
+  document.querySelector('.answer').classList.add('hidden')
   Array.from(inputs).forEach(input => {
     input.classList.remove('clicked')
   })
