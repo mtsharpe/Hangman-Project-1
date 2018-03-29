@@ -25,11 +25,13 @@ function checkLetters () {
   inputs.forEach(function (input) {
     input.addEventListener('click', function () {
       let inputGuess = input.value
-      input.setAttribute('class', 'clicked')
+      input.classList.add('clicked')
       if (wordLetters.includes(inputGuess) === true) {
-        document.getElementsByClassName()
-        wordLetters.slice(inputGuess)  
-        matches++
+        let guessedLetter = document.getElementsByClassName(inputGuess)
+        Array.from(guessedLetter).forEach(letter => {
+          letter.classList.remove('blank')
+          matches++
+        })  
         checkWin()
       } else {
         misses++
@@ -38,7 +40,6 @@ function checkLetters () {
     })
   })
 }
-
 
 checkLetters()
 
@@ -69,8 +70,8 @@ function hangman () {
     guessNumber.innerHTML--
   } else if (misses === 7) {
     document.querySelector('.rightLeg').classList.add('hung')
-    document.querySelector('.guesses').innerHTML = ''
-    document.querySelector('.reset').classList.remove('hidden') 
+    document.querySelector('.letters').innerHTML = '<h4>YOU LOSE!!!</h4>'
+    document.querySelector('.reset').classList.remove('hidden')
   }
 }
 
@@ -83,10 +84,9 @@ function reset () {
   document.querySelector('.leftLeg').classList.remove('hung')
   document.querySelector('.rightLeg').classList.remove('hung')
   document.querySelector('.guesses').innerHMTL = '<h2>You have <span class=".countdown">7</span> guesses remaining</h2>'
-  inputs.forEach(function (input) {
-    input.removeAttribute('clicked')
+  Array.from(inputs).forEach(input => {
+    input.classList.remove('clicked')
   })
-  createWord()
 }
 
 document.querySelector('.reset').addEventListener('click', reset)
