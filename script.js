@@ -92,6 +92,7 @@ function hangman () {
   }
 }
 
+// Resets game and variables
 function reset () {
   Array.from(document.querySelectorAll('.man div')).forEach(limb => limb.classList.remove('hung'))
   document.querySelector('.head').classList.remove('headhung')
