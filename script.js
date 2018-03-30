@@ -64,25 +64,28 @@ function checkWin () {
 // Adds to hangman on each missed guess and decrements number of guesses left
 function hangman () {
   if (misses === 1) {
-    document.querySelector('.noose').classList.add('hung')
-    guessNumber.innerHTML--
-  } else if (misses === 2) {
     document.querySelector('.head').classList.add('headhung')
     guessNumber.innerHTML--
-  } else if (misses === 3) {
+  } else if (misses === 2) {
     document.querySelector('.torso').classList.add('hung')
     guessNumber.innerHTML--
-  } else if (misses === 4) {
+  } else if (misses === 3) {
     document.querySelector('.leftArm').classList.add('hung')
     guessNumber.innerHTML--
-  } else if (misses === 5) {
+  } else if (misses === 4) {
     document.querySelector('.rightArm').classList.add('hung')
     guessNumber.innerHTML--
-  } else if (misses === 6) {
+  } else if (misses === 5) {
     document.querySelector('.leftLeg').classList.add('hung')
+    
     guessNumber.innerHTML--
-  } else if (misses === 7) {
+  } else if (misses === 6) {
+    
     document.querySelector('.rightLeg').classList.add('hung')
+    guessNumber.innerHTML--
+    document.querySelector('.lastmiss').innerHTML = 'miss'
+  } else if (misses === 7) {
+    document.querySelector('.noose').classList.add('hung')
     document.querySelector('.lose').classList.remove('hidden')
     document.querySelector('.reset').classList.remove('hidden')
     document.querySelector('.guesses').classList.add('hidden')
@@ -106,6 +109,7 @@ function reset () {
     input.classList.remove('clicked')
   })
   document.querySelector('.word').innerHTML = ''
+  document.querySelector('.lastmiss').innerHTML = 'misses'
   makeSecretWord()
   createWord()
   matches = 0

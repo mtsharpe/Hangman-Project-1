@@ -8,8 +8,8 @@
   <link href='./style.css' rel='stylesheet'>
 </head>
 <body>
-  <img src='./image/tree.jpg'>
-  <wrapper class='content'>
+  <img src='./image/tree.jpg' alt='trees'>
+  <div class='content'>
   <header>
     <h1 class="java">Javascript</h1><br>
     <h1 class="hang swing">Hangman</h1>
@@ -34,7 +34,7 @@
       <div class='word'></div>
       
       
-      <h2 class='guesses'>You have <span class='countdown'>7</span> guesses remaining</h2> 
+      <h2 class='guesses'>You have <span class='countdown'>7</span> <span class='lastmiss'>misses</span> remaining</h2> 
       <button class='reset hidden'>Play Again</button>
     
       
@@ -72,7 +72,7 @@
       </div>
     <div class='base'></div>
   </aside>
-  </wrapper>
+</div>
   <script src='./script.js'></script>
 </body>
 </html>
