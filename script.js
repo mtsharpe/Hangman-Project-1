@@ -64,24 +64,22 @@ function checkWin () {
 // Adds to hangman on each missed guess and decrements number of guesses left
 function hangman () {
   if (misses === 1) {
-    document.querySelector('.head').classList.add('headhung')
+    document.querySelector('.head').classList.remove('hidden')
     guessNumber.innerHTML--
   } else if (misses === 2) {
-    document.querySelector('.torso').classList.add('hung')
+    document.querySelector('.torso').classList.remove('hidden')
     guessNumber.innerHTML--
   } else if (misses === 3) {
-    document.querySelector('.leftArm').classList.add('hung')
+    document.querySelector('.leftArm').classList.remove('hidden')
     guessNumber.innerHTML--
   } else if (misses === 4) {
-    document.querySelector('.rightArm').classList.add('hung')
+    document.querySelector('.rightArm').classList.remove('hidden')
     guessNumber.innerHTML--
   } else if (misses === 5) {
-    document.querySelector('.leftLeg').classList.add('hung')
-    
+    document.querySelector('.leftLeg').classList.remove('hidden')
     guessNumber.innerHTML--
   } else if (misses === 6) {
-    
-    document.querySelector('.rightLeg').classList.add('hung')
+    document.querySelector('.rightLeg').classList.remove('hidden')
     guessNumber.innerHTML--
     document.querySelector('.lastmiss').innerHTML = 'miss'
   } else if (misses === 7) {
@@ -97,8 +95,8 @@ function hangman () {
 
 // Resets game and variables
 function reset () {
-  Array.from(document.querySelectorAll('.man div')).forEach(limb => limb.classList.remove('hung'))
-  document.querySelector('.head').classList.remove('headhung')
+  Array.from(document.querySelectorAll('.man')).forEach(limb => limb.classList.add('hidden'))
+  document.querySelector('.noose').classList.remove('hung')
   document.querySelector('.guesses').classList.remove('hidden')
   document.querySelector('.hint').classList.remove('hidden')
   document.querySelector('.lose').classList.add('hidden')

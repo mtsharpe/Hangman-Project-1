@@ -4,8 +4,8 @@ body {
   margin: 0 auto;
   text-align: center;
   background-color:  #deb887; 
-  height: 100vh;
-  width: 800px;  
+  height: 100%;
+  width: 70%;  
   box-sizing: border-box;
   zoom: 1.45;
   overflow: hidden;
@@ -15,7 +15,7 @@ header {
   width: 100%;
 }
 
-img {
+.background {
   top: -50px;
   left: 0px;
   width: 100%;
@@ -23,6 +23,24 @@ img {
   position: fixed;
   z-index: -1;
 }
+
+.hangman {
+  width: 200px;
+  height: auto;
+  position: relative;
+  float: left;
+  margin-top: 70px;
+  margin-left: 20px;
+}
+.man {
+  width: 200px;
+  height: auto;
+  position: relative;
+  float: left;
+  margin-top: 70px;
+  margin-left: -200px;
+}
+
 
 .java {
   font-size: 70px;
@@ -41,23 +59,9 @@ img {
   position: relative;
 }
 
-.center .letterInput {
-  padding: 8px;
-  width: 20px;
-  border-radius: 6px;
-  border: none;
+.center {
+  float: left;
 }
-
-.center .button1 {
-  background-color: #8A0707;
-  color: white;
-  padding: 8px;
-  text-transform: uppercase;
-  border-radius: 6px;
-  border: none;
-  margin-top: 20px;
-  width: 80px;
-} 
 
 .center .guesses {
   font-family: Helvetica;
@@ -72,21 +76,19 @@ img {
   font-size: 30px;
 }
 
-.hint {
+.center .hint {
   font-family: Helvetica;
   font-size: 16px;
   color: black;
-  position: relative;
-  margin-top: -170px;
-
+  /* position: relative; */
+  margin-top: 20px;
 }
 
-.answer {
+.center .answer {
   font-family: Helvetica;
   font-size: 16px;
   color: black;
-  position: relative;
-  margin-top: 60px;
+  position: relative; 
   margin-bottom: -20px;
 }
 
@@ -95,11 +97,181 @@ img {
   border-left: 4px solid  #c88937;
   height: 100px;
   position: relative;
-  margin-left: 120px;
+  margin-left: 100px;
   margin-top: -198px;
   z-index: -1;
 }
 
+.hung {
+  border-left: 2.5px solid black;
+}
+
+.pole {
+  width: 150px;
+  height: 100%;
+  background-color: black;
+  border-right: 8px solid black;
+  float: right;
+  margin-top: -200px;
+} 
+
+h3 {
+  font-family: Bahiana, cursive;
+  color: #8A0707;
+  margin-top: 130px;
+  margin-bottom: 5px;
+  font-size: 33px;
+  position: relative;
+}
+
+h4 {
+  font-family: Bahiana, cursive;
+  color: #8A0707;
+  font-size: 70px;
+}
+
+.lose {
+  margin-top: 5px;
+  margin-bottom: -20px;
+}
+
+.reset {
+  border: none;
+  color: #c88937;
+  background-color: black;
+  padding: 6px;
+  position: relative;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.word {
+  margin: auto;
+}
+
+.letters {
+  width: 30px;
+  height: 30px;
+  background-color: #c88937;
+  padding: 2px 2px 8px 2px;
+  border-bottom: 1px solid black;
+  font-family: Bahiana, cursive;
+  font-size: 35px;
+  color: #8A0707;
+  display: inline-block;
+  margin-top: 30px;
+  margin-right: 4px;
+}
+
+.blank {
+  color: #c88937;
+  user-select: none;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 40px);
+  grid-gap: 10px;  
+}
+
+.buttons {
+  width: 20px;
+  height: 20px;
+  color: #8A0707;
+  background-color: #c88937;
+  border: none;
+  border-radius: 100%;
+  margin-left: 20px;
+  font-family: Helvetica;
+  font-weight: 600;
+  text-align: center;
+  z-index: 1
+}
+.clicked {
+  outline: none;
+  border: none;
+  color: black;
+  background-color: black;
+  user-select: none;
+  z-index: -1;
+}
+
+.base {
+  width: 0; 
+  height: 0; 
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 90px solid black;
+  float: right;
+  margin-right: -79px;
+  margin-top: 110px; 
+} 
+
+/* followed a tutorial I found to create a swing effect */
+
+@keyframes swinging{
+	0%{transform: rotate(10deg);}
+	50%{transform: rotate(-5deg)}
+	100%{transform: rotate(10deg);}
+}
+
+.swing{
+	position: relative;
+	transform-origin: 50% 0;
+	animation: swinging 10.5s ease-in-out forwards infinite;
+}
+
+/* 
+.torso {
+  width: 200px;
+  height: auto;
+  position: relative;
+  float: left;
+  margin-top: 70px;
+  margin-left: -200px;
+}
+
+.leftArm {
+  width: 200px;
+  height: auto;
+  position: relative;
+  float: left;
+  margin-top: 70px;
+  margin-left: -200px;
+}
+
+.rightArm {
+  width: 200px;
+  height: auto;
+  position: relative;
+  float: left;
+  margin-top: 70px;
+  margin-left: -200px;
+}
+
+.leftLeg {
+  width: 200px;
+  height: auto;
+  position: relative;
+  float: left;
+  margin-top: 70px;
+  margin-left: -200px;
+}
+
+.rightLeg {
+  width: 200px;
+  height: auto;
+  position: relative;
+  float: left;
+  margin-top: 70px;
+  margin-left: -200px;
+} */
+
+/* 
 .head {
   width: 40px;
   height: 40px;
@@ -156,137 +328,34 @@ img {
   margin-top: -67px;
   position: relative;
   transform: rotate(-28deg); 
-}
+} */
 
-.hung {
-  border-left: 2.5px solid black;
-}
 
-.headhung {
+/* .headhung {
   border: 2.3px solid black;
-}
+} */
 
-.pole {
-  width: 150px;
-  height: 600px;
-  background-color: black;
-  border-right: 8px solid black;
-  float: right;
-  margin-top: -500px;
-  margin-right: 20px;
-} 
-
-h3 {
-  font-family: Bahiana, cursive;
-  color: #8A0707;
-  margin-top: 140px;
-  margin-bottom: 5px;
-  font-size: 33px;
-  position: relative;
-}
-
-h4 {
-  font-family: Bahiana, cursive;
-  color: #8A0707;
-  font-size: 70px;
-  position: relative;
-  margin-top: -160px;
-  margin-bottom: 0px
-}
-
-.lose {
-  margin-top: -170px;
-  margin-bottom: -20px;
-}
-
-.reset {
-  border: none;
-  color: #c88937;
-  background-color: black;
-  padding: 6px;
-  position: relative;
-  border-radius: 4px;
-  margin-top: 20px;
-}
-
-.hidden {
-  display: none;
-}
-
-.word {
-  margin: auto;
-}
-
-.letters {
-  width: 30px;
-  height: 30px;
-  background-color: #c88937;
-  padding: 2px 2px 8px 2px;
-  border-bottom: 1px solid black;
-  font-family: Bahiana, cursive;
-  font-size: 35px;
-  color: #8A0707;
-  display: inline-block;
-  margin-top: 30px;
-  margin-right: 4px;
-  position: relative;
-}
-
-.blank {
-  color: #c88937;
-  user-select: none;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 40px);
-  grid-gap: 10px;  
-}
-
-.buttons {
+/* 
+.center .letterInput {
+  padding: 8px;
   width: 20px;
-  height: 20px;
-  color: #8A0707;
-  background-color: #c88937;
+  border-radius: 6px;
   border: none;
-  border-radius: 100%;
-  margin-left: 20px;
-  font-family: Helvetica;
-  font-weight: 600;
-  text-align: center;
-  z-index: 1
-}
-.clicked {
-  outline: none;
-  border: none;
-  color: black;
-  background-color: black;
-  user-select: none;
-  z-index: -1;
-}
-
-.base {
-  width: 0; 
-  height: 0; 
-  border-left: 150px solid transparent;
-  border-right: 150px solid transparent;
-  border-bottom: 70px solid black;
-  float: right;
-  margin-right: -79px;
-  margin-top: 90px; 
   position: relative;
-} 
+} */
 
-/* followed a tutorial I found to create a swing effect */
-
-@keyframes swinging{
-	0%{transform: rotate(10deg);}
-	50%{transform: rotate(-5deg)}
-	100%{transform: rotate(10deg);}
-}
-
-.swing{
-	position: relative;
-	transform-origin: 50% 0;
-	animation: swinging 10.5s ease-in-out forwards infinite;
-}
+/* .center .button1 {
+  background-color: #8A0707;
+  color: white;
+  padding: 8px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  border: none;
+  margin-top: 20px;
+  width: 80px;
+}  */
+/* .center {
+  display: flex;
+  flex-direction: column;
+  margin-left: -80px;
+} */

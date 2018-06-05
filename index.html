@@ -8,21 +8,28 @@
   <link href='./style.css' rel='stylesheet'>
 </head>
 <body>
-  <img src='./image/tree.jpg' alt='trees'>
+  <img class='background' src='./images/tree.jpg' alt='trees'>
   <div class='content'>
   <header>
     <h1 class="java">Javascript</h1><br>
     <h1 class="hang swing">Hangman</h1>
   </header>
   
-  <aside class='man'>
+  <aside>
+      <img class='hangman' src='./images/Outline.png'>
+      <img class='man head hidden' src='./images/Head.png'>
+      <img class='man torso hidden' src='./images/Torso.png'>
+      <img class='man leftArm hidden' src='./images/LeftArm.png'>
+      <img class='man leftLeg hidden' src='./images/LeftLeg.png'>
+      <img class='man rightLeg hidden' src='./images/RightLeg.png'>
+      <img class='man rightArm hidden' src='./images/RightArm.png'>
       <div class='noose'></div>
-      <div class='head'></div>
+      <!-- <div class='head'></div>
       <div class='torso'></div>
       <div class='leftArm'></div>
       <div class='rightArm'></div>
       <div class='leftLeg'></div>
-      <div class='rightLeg'></div>      
+      <div class='rightLeg'></div>       -->
   </aside>
 
   <main class='center'>
@@ -33,12 +40,10 @@
       <p class='answer hidden'>The answer is: </p>
       <div class='word'></div>
       
-      
       <h2 class='guesses'>You have <span class='countdown'>7</span> <span class='lastmiss'>misses</span> remaining</h2> 
       <button class='reset hidden'>Play Again</button>
-    
-      
-    </main>
+        
+  </main>
 
   <aside class='pole'>
     <h3>Pick a letter</h3>
